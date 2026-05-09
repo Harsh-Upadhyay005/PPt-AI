@@ -1,7 +1,7 @@
 import { createServerFn } from '@tanstack/react-start'
 
-import { prisma } from '#/db'
-import { inngest } from '#/integrations/inngest/client'
+import { prisma } from '../../../lib/db'
+import { inngest } from '../../../integrations/inngest/client'
 
 import { deriveTitle, requirePresentationUserId } from '../lib/server-helpers'
 import {
@@ -84,3 +84,4 @@ export const regeneratePresentation = createServerFn({ method: 'POST' })
 
     
   })
+

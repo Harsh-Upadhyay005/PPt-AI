@@ -6,7 +6,7 @@ import {
 } from '#/components/ui/card'
 import { Link } from '@tanstack/react-router'
 
-import type { Presentation } from '../types/presentation.types'
+import type { Presentation } from '../types/presentation-types'
 import { presentationThumbnailUrl } from '../utils/thumbnail-url'
 
 type PresentationCardProps = {
@@ -22,8 +22,8 @@ export function PresentationCard({ presentation: p }: PresentationCardProps) {
 
   return (
     <Link
-      to="/presentations/$presentationId"
-      params={{ presentationId: p.id }}
+      to="/presentation/$presentation"
+      params={{ presentation: p.id }}
       className="block h-full rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
     >
       <Card className="h-full glass border-border/50 py-0 overflow-hidden transition-colors hover:border-primary/40">

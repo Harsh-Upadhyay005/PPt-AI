@@ -1,4 +1,4 @@
-import type { Presentation } from '../types/presentation.types'
+import type { Presentation } from '../types/presentation-types'
 
 import { PresentationCard } from './presentation-card'
 

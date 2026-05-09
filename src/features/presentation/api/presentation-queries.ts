@@ -1,6 +1,6 @@
 import { createServerFn } from '@tanstack/react-start'
 
-import { prisma } from '#/db'
+import { prisma } from '../../../lib/db'
 
 import { requirePresentationUserId } from '../lib/server-helpers'
 import { presentationIdInputSchema } from '../types/schemas'
@@ -41,3 +41,4 @@ export const getPresentationWithSlides = createServerFn({ method: 'GET' })
     if (!row) throw new Error('Not found')
     return row
   })
+
