@@ -2,7 +2,7 @@ import { Output, generateText } from 'ai'
 import { google } from '@ai-sdk/google'
 import { z } from 'zod'
 
-import { prisma } from '#/db'
+import { prisma } from '../../lib/db'
 
 import { inngest } from './client'
 
@@ -22,7 +22,6 @@ function buildImageKitUrl(prompt: string, filename: string): string {
 
 
 // Schemas
-
 
 const slideSchema = z.object({
   title: z.string().describe('Slide title'),
