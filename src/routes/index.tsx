@@ -131,7 +131,7 @@ function HomePage() {
                   content: e.target.value,
                 }))
               }
-              className="h-200 min-h-200 max-h-200 overflow-y-auto text-base bg-background/50 border-border/50 rounded-2xl resize-none focus-visible:ring-primary/30"
+              className="h-40 min-h-40 max-h-60 overflow-y-auto text-base bg-background/50 border-border/50 rounded-2xl resize-none focus-visible:ring-primary/30"
             />
             <div className="flex justify-between text-xs text-muted-foreground px-1">
               <span>{form.content.length.toLocaleString()} characters</span>
