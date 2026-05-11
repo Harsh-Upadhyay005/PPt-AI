@@ -126,7 +126,7 @@ function PresentationDetailPage() {
     )
   }
 
-  if (query.isError) {
+  if (query.isError && !query.isFetching && !query.data) {
     const error = query.error
     return (
       <main className="min-h-screen pt-24 pb-12 px-4">
@@ -143,6 +143,16 @@ function PresentationDetailPage() {
   }
 
   const data = query.data
+  if (!data) {
+    return (
+      <main className="min-h-screen pt-24 pb-12 px-4">
+        <div className="max-w-6xl mx-auto text-muted-foreground">
+          Retrying presentation fetch…
+        </div>
+      </main>
+    )
+  }
+
   const thumb = presentationThumbnailUrl(data.id)
   const activeSlide = slides.at(activeSlideIndex)
 
@@ -265,7 +275,7 @@ function PresentationDetailPage() {
                         prompt: e.target.value,
                       }))
                     }
-                    className="min-h-[120px] text-sm bg-background/50 border-border/50 rounded-xl resize-y"
+                    className="min-h-30 text-sm bg-background/50 border-border/50 rounded-xl resize-y"
                   />
                 </div>
 
