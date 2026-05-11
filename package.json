@@ -13,6 +13,8 @@
     "lint": "eslint",
     "format": "prettier --write . && eslint --fix",
     "check": "prettier --check ."
+    ,
+    "requeue:stuck": "node ./scripts/requeue-stuck.mjs"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.71",

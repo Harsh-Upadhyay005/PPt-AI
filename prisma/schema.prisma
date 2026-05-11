@@ -88,6 +88,9 @@ model Presentation {
   tone       String
   layout     String
   status     PresentationStatus @default(DRAFT)
+  // Timestamp of the last time generation was attempted. Used to avoid
+  // re-queuing generation events too frequently.
+  generationAttemptedAt DateTime?
   createdAt  DateTime           @default(now())
   updatedAt  DateTime           @updatedAt
   slides     Slide[]
